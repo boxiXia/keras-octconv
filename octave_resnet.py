@@ -1,19 +1,19 @@
 import os
 
-from keras.layers import BatchNormalization
-from keras.layers import Conv2D
-from keras.layers import Dense
-from keras.layers import GlobalAveragePooling2D
-from keras.layers import GlobalMaxPooling2D
-from keras.layers import Input
-from keras.layers import MaxPool2D
-from keras.layers import ReLU
-from keras.layers import add
-from keras.models import Model
-from keras.utils import get_source_inputs
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import GlobalAveragePooling2D
+from tensorflow.keras.layers import GlobalMaxPooling2D
+from tensorflow.keras.layers import Input
+from tensorflow.keras.layers import MaxPool2D
+from tensorflow.keras.layers import ReLU
+from tensorflow.keras.layers import add
+from tensorflow.keras.models import Model
+from tensorflow.keras.utils import get_source_inputs
 
-from keras import backend as K
-from keras_applications.imagenet_utils import _obtain_input_shape
+from tensorflow.keras import backend as K
+#from tensorflow.keras_applications.imagenet_utils import _obtain_input_shape
 
 from octave_conv_block import initial_oct_conv_bn_relu, final_oct_conv_bn_relu, oct_conv_bn_relu
 
@@ -216,13 +216,13 @@ def OctaveResNet(layers,
     # Force convert all layer values to integers
     layers = [int(x) for x in layers]
 
-    # Determine proper input shape
-    input_shape = _obtain_input_shape(input_shape,
-                                      default_size=224,
-                                      min_size=32,
-                                      data_format=K.image_data_format(),
-                                      require_flatten=include_top,
-                                      weights=weights)
+#     # Determine proper input shape
+#     input_shape = _obtain_input_shape(input_shape,
+#                                       default_size=224,
+#                                       min_size=32,
+#                                       data_format=K.image_data_format(),
+#                                       require_flatten=include_top,
+#                                       weights=weights)
 
     if input_tensor is None:
         img_input = Input(shape=input_shape)

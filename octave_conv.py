@@ -1,5 +1,5 @@
-from keras.layers import Conv2D, AveragePooling2D, UpSampling2D
-from keras.layers import add
+from tensorflow.keras.layers import Conv2D, AveragePooling2D, UpSampling2D
+from tensorflow.keras.layers import add
 
 
 def initial_octconv(ip, filters, kernel_size=(3, 3), strides=(1, 1),
@@ -171,8 +171,8 @@ if __name__ == '__main__':
 
     visualize_model = True
 
-    from keras.models import Model
-    from keras.layers import Input
+    from tensorflow.keras.models import Model
+    from tensorflow.keras.layers import Input
 
     ip = Input(shape=(32, 32, 3))
 
